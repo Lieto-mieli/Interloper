@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "27jzg48z2bOQiACufuNSDl1alxKnRdQVFtRimwhtLXqJvpvf5cSn4feHaR8RIw9jgJpsbN80tUZjesY3FMBAHg==",
+  "dgSpecHash": "0NTU+XHSf5wMXgAYB+0R32akYt2pRFrvCcHHPOymWREjWENX2q0GEPesZb6tnTaBe/RcVLFu5p+TL0t6hsAyMw==",
   "success": true,
   "projectFilePath": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\ascii game test.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\s2200847\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

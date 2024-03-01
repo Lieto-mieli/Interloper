@@ -12,8 +12,9 @@ internal class Game
     public int pos_y;
     public void Run()
     {
+        Enemies enemies = new();
         bool valid = false;
-        Draw draw = new();
+        Draw draw = new(enemies);
         Player player = new(draw);
         Console.CursorVisible = true;
         Console.WindowWidth = 60;
@@ -97,7 +98,7 @@ internal class Game
             {
                 if (long.TryParse(colorAnswer, out number1))
                 {
-                    if (Convert.ToInt64(colorAnswer) < Enum.GetNames(typeof(ConsoleColor)).Length - 1)
+                    if (Convert.ToInt64(colorAnswer) < Enum.GetNames(typeof(ConsoleColor)).Length)
                     {
                         valid = true;
                     }
@@ -117,7 +118,7 @@ internal class Game
         Console.WindowWidth = 200;
         Console.WindowHeight = 50;
         Console.WriteLine($"Name: {player.name} | Race: {player.race} | Class: {player.Class} | Color: {player.playerColor}");
-        Console.WriteLine("Countless have ventured into this place over the years. Few have made it out with their lives. None have gotten to it's elusive center.");
+        Console.WriteLine("Countless have ventured into this place over the years. Few have made it out with their lives. None have gotten to it's elusive center, that which lies to the west.");
         Console.WriteLine("Today you are to become one of many in your attempt to raid this cursed city. And it is unlikely you will be the last. Take your first steps and accept your impending fate.");
         Console.CursorVisible = false;
         player.position = new Point2D(10, 25);
@@ -157,6 +158,7 @@ internal class Game
             Console.Clear();
         draw.GenerateMap();
         draw.DrawMap();
+        player.Draw();
         bool game_running = true;
         while (game_running)
         {

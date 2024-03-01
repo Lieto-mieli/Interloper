@@ -8,7 +8,9 @@ internal class Program
     public static void Main()
     {
         while (true)
-        {   
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+            Enemy enemy = new Enemy();
             Game interloper = new Game();
             interloper.Run();
             Console.WriteLine("Start anew? Y/N");

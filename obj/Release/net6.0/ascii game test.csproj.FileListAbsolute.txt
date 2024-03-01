@@ -1,0 +1,19 @@
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\ascii game test.exe
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\ascii game test.deps.json
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\ascii game test.runtimeconfig.json
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\ascii game test.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\ascii game test.pdb
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\Newtonsoft.Json.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\ascii game test.csproj.AssemblyReference.cache
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\ascii_game_test.Properties.Resources.resources
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\ascii game test.csproj.GenerateResource.cache
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\ascii game test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\ascii game test.AssemblyInfoInputs.cache
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\ascii game test.AssemblyInfo.cs
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\ascii game test.csproj.CoreCompileInputs.cache
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\ascii game test.csproj.CopyComplete
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\ascii game test.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\refint\ascii game test.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\ascii game test.pdb
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\ascii game test.genruntimeconfig.cache
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\ref\ascii game test.dll
