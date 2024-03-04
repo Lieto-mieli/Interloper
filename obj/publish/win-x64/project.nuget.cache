@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "e51WHWuVN5vrzTE9c48ZH1fObE96guozynxO6jkBlPimecfCQf2HrR5CnWSwEyF2a8SpfyXpYpWNR2IU/aCxlA==",
+  "dgSpecHash": "d0gbuKfeK8JQHUo2d4L0T0V00i9LMTpB8+a60WakoTkazKzAEZnH+9JPe1Ub/bTF8EWWSYz0f6Y0utBkdSl6+Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\ascii game test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\s2200847\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\s2200847\\.nuget\\packages\\system.codedom\\8.0.0\\system.codedom.8.0.0.nupkg.sha512",
+    "C:\\Users\\s2200847\\.nuget\\packages\\system.management\\8.0.0\\system.management.8.0.0.nupkg.sha512",
     "C:\\Users\\s2200847\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.13\\microsoft.netcore.app.runtime.win-x64.6.0.13.nupkg.sha512",
     "C:\\Users\\s2200847\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.13\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.13.nupkg.sha512",
     "C:\\Users\\s2200847\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.13\\microsoft.aspnetcore.app.runtime.win-x64.6.0.13.nupkg.sha512"

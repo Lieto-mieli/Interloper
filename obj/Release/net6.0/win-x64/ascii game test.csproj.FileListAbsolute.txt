@@ -239,3 +239,5 @@ C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\a
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\win-x64\ascii game test.pdb
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\win-x64\ascii game test.genruntimeconfig.cache
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\win-x64\ref\ascii game test.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\System.CodeDom.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\System.Management.dll
