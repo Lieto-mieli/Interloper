@@ -12,8 +12,8 @@ internal class Game
     public int pos_y;
     public void Run()
     {
-        Debug.Write(Console.LargestWindowWidth);
-        Debug.Write(Console.LargestWindowHeight);
+        Console.WriteLine(Console.LargestWindowWidth);
+        Console.WriteLine(Console.LargestWindowHeight);
 
         while (true)
         {
@@ -37,6 +37,7 @@ internal class Game
         Draw draw = new(enemies);
         Player player = new(draw);
         Console.CursorVisible = true;
+        Console.Clear();
         Console.WindowWidth = 60;
         Console.WindowHeight = 25;
         while (true)
