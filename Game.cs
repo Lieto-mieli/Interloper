@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
-
 internal class Game
 {
     long number1 = 0;
@@ -12,6 +12,26 @@ internal class Game
     public int pos_y;
     public void Run()
     {
+        Debug.Write(Console.LargestWindowWidth);
+        Debug.Write(Console.LargestWindowHeight);
+
+        while (true)
+        {
+            if (Console.LargestWindowWidth >= 200 || Console.LargestWindowHeight >= 50) { break; }
+            else 
+            { 
+                Console.WriteLine("Not enough space for game window. Display resolution should be atleast 1920x1080.");
+                Console.WriteLine($"Current possible console window width: {Console.LargestWindowWidth} | Required: 200");
+                Console.WriteLine($"Current possible console window height: {Console.LargestWindowHeight} | Required: 50");
+                Console.WriteLine("Please press Enter when ready");
+                ConsoleKeyInfo key = Console.ReadKey(true);
+                switch (key.Key)
+                {
+                    case ConsoleKey.Enter:
+                        break;
+                }
+            }
+        }
         Enemies enemies = new();
         bool valid = false;
         Draw draw = new(enemies);

@@ -17,3 +17,6 @@ C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\a
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Debug\net6.0\ascii game test.csproj.GenerateResource.cache
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Debug\net6.0\ascii game test.csproj.CopyComplete
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\System.Management.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Management.dll
