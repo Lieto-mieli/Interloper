@@ -26,6 +26,7 @@ internal class Draw
     public int[] MapIndex = new int[10000];
     Enemies enemies = null;
     public int nroOfEnemies = 0;
+    Font font;
     public Draw(Enemies enemies)
     {
         this.enemies = enemies;
@@ -342,7 +343,7 @@ internal class Draw
         upgClassPngs[2][0] = Raylib.LoadTexture("Textures/2-Dagaz.png");
         upgClassPngs[2][1] = Raylib.LoadTexture("Textures/2-Algiz.png");
         upgClassPngs[2][2] = Raylib.LoadTexture("Textures/2-Constitution.png");
-        //Font font = Raylib.LoadFont("Fonts/ArialUnicodeFont.ttf");
+        font = Raylib.LoadFont("Fonts/ArialUnicodeFont.ttf");
         //font = Raylib.LoadFontEx("Fonts/ArialUnicodeFont.ttf", 20, 2580);
         ZeroElectric.Vinculum.Color tempcolor = Player.FromColor(Pcolor);
         Console.BackgroundColor = ConsoleColor.Black;
@@ -477,7 +478,8 @@ internal class Draw
         }
         Raylib.DrawTexture(upgClassPngs[(int)upgClass][currentoption], X * 10, Y * 20, Raylib.WHITE);
         Raylib.DrawRectangle(((X + 11) * 10) + 5, ((Y + 2) * 20) + 10, 30, 30, Raylib.BLACK);
-        Raylib.DrawText(Convert.ToString($"({order})"), ((X + 12) * 10) + 5, ((Y + 2) * 20) + 15, 20, Player.FromColor(Enum.Parse<ConsoleColor>(upgClassLists[(int)upgClass][currentoption][8])));
+        // Raylib.DrawText(Convert.ToString($"({order})"), ((X + 12) * 10) + 5, ((Y + 2) * 20) + 15, 20, Player.FromColor(Enum.Parse<ConsoleColor>(upgClassLists[(int)upgClass][currentoption][8])));
+        Raylib.DrawTextEx(font, Convert.ToString($"({order})"), new Vector2(((X + 12) * 10) + 5, ((Y + 2) * 20) + 15), 20, 20, Player.FromColor(Enum.Parse<ConsoleColor>(upgClassLists[(int)upgClass][currentoption][8])));
     }
     // 0 = " " = nothing
     // 1 = "-" = floor

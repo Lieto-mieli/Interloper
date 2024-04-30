@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ascii game test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c583649f8d5666f4d248926c33e7962805b5da0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a1f237d5a803deee47d15bfa5416612552fc3e4")]
 [assembly: System.Reflection.AssemblyProductAttribute("ascii game test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ascii game test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
