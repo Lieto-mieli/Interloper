@@ -1,15 +1,28 @@
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Management;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using ZeroElectric.Vinculum;
+using static System.Net.Mime.MediaTypeNames;
 internal class Game
 {
+    static Enemies enemies = new();
+    static Draw draw = new(enemies);
+    static Player player = new(draw);
+    static Refresh refresh = new(player);
     long number1 = 0;
     public int pos_x;
     public int pos_y;
+    public void UnloadAll()
+    {
+        player.UnloadSfx();
+        refresh.UnloadMusic();
+    }
     public void Run()
     {
         Console.WriteLine(Console.LargestWindowWidth);
@@ -32,12 +45,10 @@ internal class Game
                 }
             }
         }
-        Enemies enemies = new();
         bool valid = false;
-        Draw draw = new(enemies);
-        Player player = new(draw);
         Console.CursorVisible = true;
         Console.Clear();
+        Console.WriteLine("Monkeys Spinning Monkeys Kevin MacLeod (incompetech.com) and Fluffing a Duck Kevin MacLeod (incompetech.com) Both licensed under Creative Commons: By Attribution 3.0 License http://creativecommons.org/licenses/by/3.0/");
         Console.WindowWidth = 60;
         Console.WindowHeight = 25;
         while (true)
@@ -140,7 +151,7 @@ internal class Game
         Console.WindowHeight = 50;
         Console.WriteLine($"Name: {player.name} | Race: {player.race} | Class: {player.Class} | Color: {player.playerColor}");
         Console.WriteLine("Countless have ventured into this place over the years. Few have made it out with their lives. None have gotten to it's elusive center, that which lies to the west.");
-        Console.WriteLine("Today you are to become one of many in your attempt to raid this cursed city. And it is unlikely you will be the last. Take your first steps and accept your impending fate.");
+        Console.WriteLine("Today you are to become one of many in your attempt to explore this cursed city. And it is unlikely you will be the last. Take your first steps and accept your impending fate.");
         Console.CursorVisible = false;
         player.position = new Point2D(10, 25);
         player.Draw();
@@ -150,37 +161,47 @@ internal class Game
             ConsoleKeyInfo key = Console.ReadKey(true);
             switch (key.Key)
             {
-                case ConsoleKey.NumPad9:
-                    startmove= false;
-                    break;
-                case ConsoleKey.NumPad8:
+                default:
                     startmove = false;
                     break;
-                case ConsoleKey.NumPad7:
-                    startmove = false;
-                    break;
-                case ConsoleKey.NumPad6:
-                    startmove = false;
-                    break;
-                case ConsoleKey.NumPad4:
-                    startmove = false;
-                    break;
-                case ConsoleKey.NumPad3:
-                    startmove = false;
-                    break;
-                case ConsoleKey.NumPad2:
-                    startmove = false;
-                    break;
-                case ConsoleKey.NumPad1:
-                    startmove = false;
-                    break;
+                //case ConsoleKey.NumPad9:
+                //    startmove= false;
+                //    break;
+                //case ConsoleKey.NumPad8:
+                //    startmove = false;
+                //    break;
+                //case ConsoleKey.NumPad7:
+                //    startmove = false;
+                //    break;
+                //case ConsoleKey.NumPad6:
+                //    startmove = false;
+                //    break;
+                //case ConsoleKey.NumPad4:
+                //    startmove = false;
+                //    break;
+                //case ConsoleKey.NumPad3:
+                //    startmove = false;
+                //    break;
+                //case ConsoleKey.NumPad2:
+                //    startmove = false;
+                //    break;
+                //case ConsoleKey.NumPad1:
+                //    startmove = false;
+                //    break;
             }
         }
-            Console.Clear();
+        Raylib.InitWindow(2000, 1000, "Raylib");
+        Raylib.SetTargetFPS(30);
+        Raylib.InitAudioDevice();
+        player.LoadSfx();
+        Console.Clear();
         draw.GenerateMap();
         draw.DrawMap();
+        draw.AltDrawMap();
         player.Draw();
+        player.AltDraw();
         bool game_running = true;
+        refresh.Update();
         while (game_running)
         {
             ConsoleKeyInfo key = Console.ReadKey(true);
@@ -226,6 +247,62 @@ internal class Game
                     break;
             }
             player.Draw();
+        }
+
+    }
+    public static void Start()
+    {
+    }
+    public static void Update()
+    {
+        double delay = 0;
+        while (true)
+        {
+
+            if (delay > 0) { delay -= 0.1; }
+            if (Raylib.IsKeyPressed(KeyboardKey.KEY_KP_9) && delay <= 0)
+            {
+                player.Move(1, -1);
+                delay = 0.5;
+            }
+            if (Raylib.IsKeyPressed(KeyboardKey.KEY_KP_8) && delay <= 0)
+            {
+                player.Move(0, -1);
+                delay = 0.5;
+            }
+            if (Raylib.IsKeyPressed(KeyboardKey.KEY_KP_7) && delay <= 0)
+            {
+                player.Move(-1, -1);
+                delay = 0.5;
+            }
+            if (Raylib.IsKeyPressed(KeyboardKey.KEY_KP_6) && delay <= 0)
+            {
+                player.Move(1, 0);
+                delay = 0.5;
+            }
+            if (Raylib.IsKeyPressed(KeyboardKey.KEY_KP_4) && delay <= 0)
+            {
+                player.Move(-1, 0);
+                delay = 0.5;
+            }
+            if (Raylib.IsKeyPressed(KeyboardKey.KEY_KP_3) && delay <= 0)
+            {
+                player.Move(1, 1);
+                delay = 0.5;
+            }
+            if (Raylib.IsKeyPressed(KeyboardKey.KEY_KP_2) && delay <= 0)
+            {
+                player.Move(0, 1);
+                delay = 0.5;
+            }
+            if (Raylib.IsKeyPressed(KeyboardKey.KEY_KP_1) && delay <= 0)
+            {
+                player.Move(-1, 1);
+                delay = 0.5;
+            }
+            Raylib.BeginDrawing();
+            Raylib.ClearBackground(Raylib.BLACK);
+            Raylib.EndDrawing();
         }
     }
 }

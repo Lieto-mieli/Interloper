@@ -1,15 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "d0gbuKfeK8JQHUo2d4L0T0V00i9LMTpB8+a60WakoTkazKzAEZnH+9JPe1Ub/bTF8EWWSYz0f6Y0utBkdSl6+Q==",
+  "dgSpecHash": "rqhRDhIVphiKQ/Xbu1XoWYvjEyZckCpD9uwV/GFazWkG4LVM+bLSmB5QtEk2Ly9tAUfzfx9KOkEMKSQwBmjaKg==",
   "success": true,
   "projectFilePath": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\ascii game test.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\s2200847\\.nuget\\packages\\communitytoolkit.highperformance\\8.1.0\\communitytoolkit.highperformance.8.1.0.nupkg.sha512",
+    "C:\\Users\\s2200847\\.nuget\\packages\\microsoft.net.illink.analyzers\\7.0.100-1.23211.1\\microsoft.net.illink.analyzers.7.0.100-1.23211.1.nupkg.sha512",
+    "C:\\Users\\s2200847\\.nuget\\packages\\microsoft.net.illink.tasks\\7.0.100-1.23211.1\\microsoft.net.illink.tasks.7.0.100-1.23211.1.nupkg.sha512",
     "C:\\Users\\s2200847\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\s2200847\\.nuget\\packages\\raylib-csharp-vinculum\\5.0.1\\raylib-csharp-vinculum.5.0.1.nupkg.sha512",
     "C:\\Users\\s2200847\\.nuget\\packages\\system.codedom\\8.0.0\\system.codedom.8.0.0.nupkg.sha512",
     "C:\\Users\\s2200847\\.nuget\\packages\\system.management\\8.0.0\\system.management.8.0.0.nupkg.sha512",
-    "C:\\Users\\s2200847\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.13\\microsoft.netcore.app.runtime.win-x64.6.0.13.nupkg.sha512",
-    "C:\\Users\\s2200847\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.13\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.13.nupkg.sha512",
-    "C:\\Users\\s2200847\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.13\\microsoft.aspnetcore.app.runtime.win-x64.6.0.13.nupkg.sha512"
+    "C:\\Users\\s2200847\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.27\\microsoft.netcore.app.runtime.win-x64.6.0.27.nupkg.sha512",
+    "C:\\Users\\s2200847\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.27\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.27.nupkg.sha512",
+    "C:\\Users\\s2200847\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.27\\microsoft.aspnetcore.app.runtime.win-x64.6.0.27.nupkg.sha512"
   ],
   "logs": []
 }

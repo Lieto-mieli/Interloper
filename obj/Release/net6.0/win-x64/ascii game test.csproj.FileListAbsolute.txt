@@ -221,7 +221,6 @@ C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\a
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\hostfxr.dll
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\hostpolicy.dll
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\mscordaccore.dll
-C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\mscordaccore_amd64_amd64_6.0.1322.58009.dll
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\mscordbi.dll
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\mscorrc.dll
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\msquic.dll
@@ -233,7 +232,6 @@ C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\a
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\win-x64\ascii game test.AssemblyInfoInputs.cache
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\win-x64\ascii game test.AssemblyInfo.cs
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\win-x64\ascii game test.csproj.CoreCompileInputs.cache
-C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\win-x64\ascii game test.csproj.CopyComplete
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\win-x64\ascii game test.dll
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\win-x64\refint\ascii game test.dll
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\win-x64\ascii game test.pdb
@@ -241,3 +239,25 @@ C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\a
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\win-x64\ref\ascii game test.dll
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\System.CodeDom.dll
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\System.Management.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\Fonts\ArialUnicodeFont.ttf
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\Sounds\E1-Fluffing-a-Duck.mp3
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\Sounds\E2-Monkeys-Spinning-Monkeys.mp3
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\Sounds\P1-Metalpipe.mp3
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\Textures\0-Constitution.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\Textures\0-Refuse.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\Textures\0-Strength.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\Textures\1-Buckshot.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\Textures\1-Engineer.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\Textures\1-Theory.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\Textures\2-Algiz.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\Textures\2-Dagaz.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\Textures\2-Fehu.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\CommunityToolkit.HighPerformance.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\Raylib-CSharp-Vinculum.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\raylib.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\raylib.exp
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\raylib.lib
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\raylib.pdb
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\mscordaccore_amd64_amd64_6.0.2724.6912.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\win-x64\ascii game test.sourcelink.json
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\win-x64\ascii ga.795FB278.Up2Date

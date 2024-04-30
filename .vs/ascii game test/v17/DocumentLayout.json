@@ -1,0 +1,184 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|c:\\users\\s2200847\\onedrive - business college helsinki\\visual studio projektit\\ascii game test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|c:\\users\\s2200847\\onedrive - business college helsinki\\visual studio projektit\\ascii game test\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|c:\\users\\s2200847\\onedrive - business college helsinki\\visual studio projektit\\ascii game test\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|c:\\users\\s2200847\\onedrive - business college helsinki\\visual studio projektit\\ascii game test\\refresh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|solutionrelative:refresh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|c:\\users\\s2200847\\onedrive - business college helsinki\\visual studio projektit\\ascii game test\\draw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|solutionrelative:draw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|c:\\users\\s2200847\\onedrive - business college helsinki\\visual studio projektit\\ascii game test\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|c:\\users\\s2200847\\onedrive - business college helsinki\\visual studio projektit\\ascii game test\\enemies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|solutionrelative:enemies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|c:\\users\\s2200847\\onedrive - business college helsinki\\visual studio projektit\\ascii game test\\weightrandom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|solutionrelative:weightrandom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|c:\\users\\s2200847\\onedrive - business college helsinki\\visual studio projektit\\ascii game test\\point2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|solutionrelative:point2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|c:\\users\\s2200847\\onedrive - business college helsinki\\visual studio projektit\\ascii game test\\pathfind.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5FD53F-F3A0-44E2-8F5C-C04E2A6E30B0}|ascii game test.csproj|solutionrelative:pathfind.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-19T09:08:53.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Game.cs",
+              "RelativeDocumentMoniker": "Game.cs",
+              "ToolTip": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Game.cs",
+              "RelativeToolTip": "Game.cs",
+              "ViewState": "AQIAAKsAAAAAAAAAAAAYwLkAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-16T10:29:25.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Player.cs",
+              "RelativeDocumentMoniker": "Player.cs",
+              "ToolTip": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Player.cs",
+              "RelativeToolTip": "Player.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAgwDoAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-16T10:27:10.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Draw.cs",
+              "DocumentMoniker": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Draw.cs",
+              "RelativeDocumentMoniker": "Draw.cs",
+              "ToolTip": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Draw.cs",
+              "RelativeToolTip": "Draw.cs",
+              "ViewState": "AQIAAN0BAAAAAAAAAAAuwOYBAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-23T08:18:23.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Enemies.cs",
+              "DocumentMoniker": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Enemies.cs",
+              "RelativeDocumentMoniker": "Enemies.cs",
+              "ToolTip": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Enemies.cs",
+              "RelativeToolTip": "Enemies.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-06T08:45:29.006Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Enemy.cs",
+              "RelativeDocumentMoniker": "Enemy.cs",
+              "ToolTip": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Enemy.cs",
+              "RelativeToolTip": "Enemy.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBoAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-13T08:11:46.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Pathfind.cs",
+              "DocumentMoniker": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Pathfind.cs",
+              "RelativeDocumentMoniker": "Pathfind.cs",
+              "ToolTip": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Pathfind.cs",
+              "RelativeToolTip": "Pathfind.cs",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAswE0AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T09:49:45.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WeightRandom.cs",
+              "DocumentMoniker": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\WeightRandom.cs",
+              "RelativeDocumentMoniker": "WeightRandom.cs",
+              "ToolTip": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\WeightRandom.cs",
+              "RelativeToolTip": "WeightRandom.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAA+wCsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-01T09:28:51.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Point2D.cs",
+              "DocumentMoniker": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Point2D.cs",
+              "RelativeDocumentMoniker": "Point2D.cs",
+              "ToolTip": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Point2D.cs",
+              "RelativeToolTip": "Point2D.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-30T07:33:58.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Refresh.cs",
+              "DocumentMoniker": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Refresh.cs",
+              "RelativeDocumentMoniker": "Refresh.cs",
+              "ToolTip": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\visual studio projektit\\ascii game test\\Refresh.cs",
+              "RelativeToolTip": "Refresh.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAmwBAAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T06:35:21.201Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

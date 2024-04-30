@@ -1,0 +1,19 @@
+C:\Users\s2200847\Documents\Visual Studio 2022\ascii game test.pdb
+C:\Users\s2200847\Documents\Visual Studio 2022\Sounds\E1-Fluffing-a-Duck.mp3
+C:\Users\s2200847\Documents\Visual Studio 2022\Sounds\E2-Monkeys-Spinning-Monkeys.mp3
+C:\Users\s2200847\Documents\Visual Studio 2022\Sounds\P1-Metalpipe.mp3
+C:\Users\s2200847\Documents\Visual Studio 2022\Textures\0-Constitution.png
+C:\Users\s2200847\Documents\Visual Studio 2022\Textures\0-Refuse.png
+C:\Users\s2200847\Documents\Visual Studio 2022\Textures\0-Strength.png
+C:\Users\s2200847\Documents\Visual Studio 2022\Textures\1-Buckshot.png
+C:\Users\s2200847\Documents\Visual Studio 2022\Textures\1-Engineer.png
+C:\Users\s2200847\Documents\Visual Studio 2022\Textures\1-Theory.png
+C:\Users\s2200847\Documents\Visual Studio 2022\Textures\2-Algiz.png
+C:\Users\s2200847\Documents\Visual Studio 2022\Textures\2-Dagaz.png
+C:\Users\s2200847\Documents\Visual Studio 2022\Textures\2-Fehu.png
+C:\Users\s2200847\Documents\Visual Studio 2022\Fonts\ArialUnicodeFont.ttf
+C:\Users\s2200847\Documents\Visual Studio 2022\raylib.dll
+C:\Users\s2200847\Documents\Visual Studio 2022\raylib.exp
+C:\Users\s2200847\Documents\Visual Studio 2022\raylib.lib
+C:\Users\s2200847\Documents\Visual Studio 2022\raylib.pdb
+C:\Users\s2200847\Documents\Visual Studio 2022\ascii game test.exe

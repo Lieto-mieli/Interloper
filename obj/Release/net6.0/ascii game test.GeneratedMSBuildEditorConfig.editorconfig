@@ -9,3 +9,5 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ascii_game_test
 build_property.ProjectDir = C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

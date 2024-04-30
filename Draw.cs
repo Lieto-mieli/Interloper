@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Formats.Asn1;
 using System.Linq;
+using System.Numerics;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using ZeroElectric.Vinculum;
 using static System.Net.Mime.MediaTypeNames;
 
 internal class Draw
@@ -22,6 +25,7 @@ internal class Draw
     static int[] Ypos = new int[99];
     public int[] MapIndex = new int[10000];
     Enemies enemies = null;
+    public int nroOfEnemies = 0;
     public Draw(Enemies enemies)
     {
         this.enemies = enemies;
@@ -110,7 +114,7 @@ internal class Draw
                 upgDone = false;
             }
         }
-        enemies.GenerateEnemies(MapIndex, levelNum);
+        nroOfEnemies = enemies.GenerateEnemies(MapIndex, levelNum);
     }
     //here is a list of all upgrades for all classes.
     static string[] strength = new string[]
@@ -290,9 +294,57 @@ internal class Draw
         class1lists,
         class2lists
     };
+    static Texture constitutioN;
+    static Texture strengtH;
+    static Texture refusE;
+    static Texture[] class0pngs = new Texture[]
+    {
+        strengtH,
+        constitutioN,
+        refusE,
+    };
+    static Texture buckshoT;
+    static Texture engineeR;
+    static Texture theorY;
+    static Texture[] class1pngs = new Texture[]
+    {
+        engineeR,
+        buckshoT,
+        theorY,
+    };
+    static Texture dagaZ;
+    static Texture algiZ;
+    static Texture fehU;
+    static Texture[] class2pngs = new Texture[]
+{
+        dagaZ,
+        algiZ,
+        fehU,
+};
+    static Texture[][] upgClassPngs = new Texture[][]
+    {
+        class0pngs,
+        class1pngs,
+        class2pngs
+    };
+
     //here ends the lists of upgrades
+    int outTest;
     public void UpgradeGet(Class Pclass, ConsoleColor Pcolor)
     {
+        // lataan tekstuurit tässä koska se pitää tehdä window initialisaation jälkeen ja oon laiska
+        upgClassPngs[0][0] = Raylib.LoadTexture("Textures/0-Strength.png");
+        upgClassPngs[0][1] = Raylib.LoadTexture("Textures/0-Constitution.png");
+        upgClassPngs[0][2] = Raylib.LoadTexture("Textures/0-Refuse.png");
+        upgClassPngs[1][0] = Raylib.LoadTexture("Textures/1-Engineer.png");
+        upgClassPngs[1][1] = Raylib.LoadTexture("Textures/1-Buckshot.png");
+        upgClassPngs[1][2] = Raylib.LoadTexture("Textures/1-Theory.png");
+        upgClassPngs[2][0] = Raylib.LoadTexture("Textures/2-Dagaz.png");
+        upgClassPngs[2][1] = Raylib.LoadTexture("Textures/2-Algiz.png");
+        upgClassPngs[2][2] = Raylib.LoadTexture("Textures/2-Constitution.png");
+        //Font font = Raylib.LoadFont("Fonts/ArialUnicodeFont.ttf");
+        //font = Raylib.LoadFontEx("Fonts/ArialUnicodeFont.ttf", 20, 2580);
+        ZeroElectric.Vinculum.Color tempcolor = Player.FromColor(Pcolor);
         Console.BackgroundColor = ConsoleColor.Black;
         Console.ForegroundColor = Pcolor;
         Console.SetCursorPosition(50, 30);
@@ -312,12 +364,34 @@ internal class Draw
             }
             Console.Write("║");
         }
+        Raylib.BeginDrawing();
+        Raylib.EndDrawing();
+        Raylib.BeginDrawing();
+        // I give up, tää paska ei oo worth it, jesus mä tuun hulluks jos mä joudun ikinä käyttämään tätä saatanan raylibiä uudestaan jossain projektissä.
+        Debug.WriteLine("");
+        Debug.WriteLine(Raylib.GetCodepoint('═', out outTest));
+        Debug.WriteLine(Char.ConvertFromUtf32(Raylib.GetCodepoint('═', out outTest)));
+        Debug.WriteLine(Char.ConvertFromUtf32(outTest));
+        Debug.WriteLine("");
+        //Raylib.DrawTextEx(font, "╔", new System.Numerics.Vector2(50 * 10, 30 * 20), 20,0, tempcolor);
+        Raylib.DrawRectangle(50 * 10, 30 * 20, 10, 21 * 20, tempcolor);
+        Raylib.DrawRectangle(51 * 10, 30 * 20, 10 * 100, 20, tempcolor);
+        Raylib.DrawRectangle(150 * 10, 30 * 20, 10, 21 * 20, tempcolor);
+        Raylib.DrawRectangle(51 * 10, 31 * 20, 10 * 99, 20 * 20, Raylib.BLACK);
+        Raylib.DrawTexture(upgClassPngs[0][0], 60*10, 35*20, Raylib.WHITE);
+        Raylib.DrawRectangle((71 * 10)+5, (37 * 20)+10, 30, 30, Raylib.BLACK);
+        Debug.WriteLine(upgClassPngs[0][0]);
+        //for (int i = 0; i < 1; i++)
+        //{
+        //    Raylib.DrawTextEx(font, "═", new System.Numerics.Vector2((50 + i + 1) * 10, 30 * 20), 20, 0, tempcolor);
+        //}
         string upg1temp = upgClassLists[(int)Pclass][option1][7];
         string upg2temp = upgClassLists[(int)Pclass][option2][7];
         string upg3temp = upgClassLists[(int)Pclass][option3][7];
         UpgChoice(60, 35, Pclass, 1);
         UpgChoice(94, 35, Pclass, 2);
         UpgChoice(128,35, Pclass, 3);
+        Raylib.EndDrawing();
         bool upgChoosing = true;
         while (upgChoosing)
         {
@@ -401,13 +475,16 @@ internal class Draw
                 Console.Write($"{upgClassLists[(int)upgClass][currentoption][i]}");
             }
         }
+        Raylib.DrawTexture(upgClassPngs[(int)upgClass][currentoption], X * 10, Y * 20, Raylib.WHITE);
+        Raylib.DrawRectangle(((X + 11) * 10) + 5, ((Y + 2) * 20) + 10, 30, 30, Raylib.BLACK);
+        Raylib.DrawText(Convert.ToString($"({order})"), ((X + 12) * 10) + 5, ((Y + 2) * 20) + 15, 20, Player.FromColor(Enum.Parse<ConsoleColor>(upgClassLists[(int)upgClass][currentoption][8])));
     }
     // 0 = " " = nothing
     // 1 = "-" = floor
     // 2 = "#" = wall
     // 3 = "ƒ" = tree
     // 4 = "-" | "§" when close = upgrade
-    //
+    // 5 = "%" = enemy
     public void DrawMap()
     {
         for (int i = 0; i < 10000; i++)
@@ -440,5 +517,44 @@ internal class Draw
                     break;
             }
         }
+    }
+    public void AltDrawMap()
+    {
+        Raylib.BeginDrawing();
+        Raylib.EndDrawing();
+        Raylib.BeginDrawing();
+        Raylib.ClearBackground(Raylib.BLACK);
+        for (int i = 0; i < 10000; i++)
+        {
+            switch (MapIndex[i])
+            {
+                case 0:
+                    Raylib.DrawRectangle((i - ((Convert.ToInt32(i / 200)) * 200)) * 10, (Convert.ToInt32(i / 200)) * 20, 10, 20, Raylib.BLACK);
+                    break;
+                case 1:
+                    Raylib.DrawRectangle((i - ((Convert.ToInt32(i / 200)) * 200)) * 10, (Convert.ToInt32(i / 200)) * 20, 10, 20, Raylib.GRAY);
+                    break;
+                case 2:
+                    Raylib.DrawRectangle((i - ((Convert.ToInt32(i / 200)) * 200)) * 10, (Convert.ToInt32(i / 200)) * 20, 10, 20, Raylib.DARKGRAY);
+                    break;
+                case 3:
+                    Raylib.DrawRectangle(((i - ((Convert.ToInt32(i / 200)) * 200)) * 10)+2, ((Convert.ToInt32(i / 200)) * 20)+10, 6, 10, Raylib.DARKBROWN);
+                    Raylib.DrawTriangle(new Vector2(((i - ((Convert.ToInt32(i / 200)) * 200)) * 10) + 10, ((Convert.ToInt32(i / 200)) * 20) + 12), new Vector2(((i - ((Convert.ToInt32(i / 200)) * 200)) * 10)+5, ((Convert.ToInt32(i / 200)) * 20) - 5), new Vector2(((i - ((Convert.ToInt32(i / 200)) * 200)) * 10), ((Convert.ToInt32(i / 200)) * 20) + 12), Raylib.DARKGREEN);
+                    break;
+                case 4:
+                    Raylib.DrawRectangle((i - ((Convert.ToInt32(i / 200)) * 200)) * 10, (Convert.ToInt32(i / 200)) * 20, 10, 20, Raylib.GRAY);
+                    break;
+            }
+        }
+        for (int i = 0; i < nroOfEnemies; i++)
+        {
+            using (StreamReader outputFile = new StreamReader(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"Enemy{i}.json")))
+            {
+                Enemy testoutput = JsonConvert.DeserializeObject<Enemy>(outputFile.ReadToEnd());
+                Raylib.DrawRectangle((testoutput.position - ((Convert.ToInt32(testoutput.position / 200)) * 200)) * 10, (Convert.ToInt32(testoutput.position / 200)) * 20, 10, 20, Raylib.RED);
+                MapIndex[testoutput.position] = 5;
+            }
+        }
+        Raylib.EndDrawing();
     }
 }

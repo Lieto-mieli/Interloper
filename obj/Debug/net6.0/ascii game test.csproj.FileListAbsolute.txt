@@ -16,7 +16,28 @@ C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\a
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Debug\net6.0\ascii_game_test.Properties.Resources.resources
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Debug\net6.0\ascii game test.csproj.GenerateResource.cache
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Debug\net6.0\ascii game test.csproj.CopyComplete
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\System.CodeDom.dll
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\System.Management.dll
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Management.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Debug\net6.0\ascii game test.sourcelink.json
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Debug\net6.0\ascii ga.795FB278.Up2Date
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\CommunityToolkit.HighPerformance.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\Raylib-CSharp-Vinculum.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\runtimes\linux-x64\native\libraylib.so
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\runtimes\win-x64\native\raylib.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\runtimes\win-x64\native\raylib.exp
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\runtimes\win-x64\native\raylib.lib
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\runtimes\win-x64\native\raylib.pdb
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\Fonts\ArialUnicodeFont.ttf
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\Textures\0-Refuse.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\Textures\0-Strength.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\Textures\1-Buckshot.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\Textures\1-Engineer.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\Textures\1-Theory.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\Textures\2-Algiz.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\Textures\2-Dagaz.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\Textures\2-Fehu.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\Textures\0-Constitution.png
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\Sounds\E1-Fluffing-a-Duck.mp3
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\Sounds\E2-Monkeys-Spinning-Monkeys.mp3
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Debug\net6.0\Sounds\P1-Metalpipe.mp3

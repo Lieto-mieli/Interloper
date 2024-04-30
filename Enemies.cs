@@ -25,7 +25,7 @@ internal class Enemies
         weightedChanceExecutor.Execute();
         return returner;
     }
-    public void GenerateEnemies(int[] mapindex, int levelnum)
+    public int GenerateEnemies(int[] mapindex, int levelnum)
     {
         for (int i = 0; i < 10000; i++)
         {
@@ -38,5 +38,6 @@ internal class Enemies
                 }
             }
         }
+        return nro;
     }
 }
