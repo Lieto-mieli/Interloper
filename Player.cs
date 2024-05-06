@@ -78,29 +78,29 @@ internal class Player
         {
             Raylib.PlaySound(walksfx);
             //spend turn on movement
-            Console.SetCursorPosition(position.x-x_move, position.y-y_move);
-            Raylib.BeginDrawing();
-            Raylib.EndDrawing();
-            Raylib.BeginDrawing();
-            Color tempcolor = FromColor(playerColor);
-            Raylib.DrawRectangle(position.x * 10, position.y * 20, 10, 20, tempcolor);
-            switch (draw.MapIndex[position.x-x_move + ((position.y-y_move) * 200)])
-            {
-                    case 0:
-                        Raylib.DrawRectangle((position.x - x_move) * 10, (position.y - y_move) * 20, 10, 20, Raylib.BLACK);
-                    Debug.WriteLine("on nolla");
-                    break;
-                    case 1:
-                        Raylib.DrawRectangle((position.x - x_move) * 10, (position.y - y_move) * 20, 10, 20, Raylib.GRAY);
-                    Debug.WriteLine("on yksi");
-                    break;
-                    default:
-                    Debug.WriteLine("ei vapaa");
-                    break;
-            }
-            Debug.WriteLine($"{position.x - x_move} {position.y - y_move}");
-            Debug.WriteLine(draw.MapIndex[position.x - x_move + ((position.y - y_move) * 200)]);
-            Raylib.EndDrawing();
+            //Console.SetCursorPosition(position.x-x_move, position.y-y_move);
+            //Raylib.BeginDrawing();
+            //Raylib.EndDrawing();
+            //Raylib.BeginDrawing();
+            //Color tempcolor = FromColor(playerColor);
+            //Raylib.DrawRectangle(position.x * 10, position.y * 20, 10, 20, tempcolor);
+            //switch (draw.MapIndex[position.x-x_move + ((position.y-y_move) * 200)])
+            //{
+            //        case 0:
+            //            Raylib.DrawRectangle((position.x - x_move) * 10, (position.y - y_move) * 20, 10, 20, Raylib.BLACK);
+            //        Debug.WriteLine("on nolla");
+            //        break;
+            //        case 1:
+            //            Raylib.DrawRectangle((position.x - x_move) * 10, (position.y - y_move) * 20, 10, 20, Raylib.GRAY);
+            //        Debug.WriteLine("on yksi");
+            //        break;
+            //        default:
+            //        Debug.WriteLine("ei vapaa");
+            //        break;
+            //}
+            //Debug.WriteLine($"{position.x - x_move} {position.y - y_move}");
+            //Debug.WriteLine(draw.MapIndex[position.x - x_move + ((position.y - y_move) * 200)]);
+            //Raylib.EndDrawing();
         }
         int Y = Convert.ToInt32(draw.upgPos/200);
         int X = draw.upgPos - (Y * 200);
@@ -142,10 +142,16 @@ internal class Player
     }
     public void AltDraw()
     {
-        Raylib.BeginDrawing();
-        Raylib.EndDrawing();
-        Raylib.BeginDrawing();
-        Raylib.EndDrawing();
+        Color tempcolor = FromColor(playerColor);
+        Raylib.DrawRectangle(position.x * 10, position.y * 20, 10, 20, tempcolor);
+        int Y = Convert.ToInt32(draw.upgPos / 200);
+        int X = draw.upgPos - (Y * 200);
+        if ((AbsDiff(X, position.x) + AbsDiff(Y, position.y)) < 10 && draw.MapIndex[draw.upgPos] == 4)
+        {
+            tempcolor = FromColor((ConsoleColor)r.Next(1, 16));
+            //Raylib.DrawTriangle(new Vector2(X * 10,Y * 20), new Vector2((X * 10)+5, (Y * 20)-5), new Vector2((X * 10)+10, Y * 20), tempcolor);
+            Raylib.DrawPoly(new Vector2((X * 10) + 5, (Y * 20) + 10), 6, 8, 0, tempcolor);
+        }
     }
     public static Color FromColor(ConsoleColor c)
     {

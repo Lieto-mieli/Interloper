@@ -522,9 +522,6 @@ internal class Draw
     }
     public void AltDrawMap()
     {
-        Raylib.BeginDrawing();
-        Raylib.EndDrawing();
-        Raylib.BeginDrawing();
         Raylib.ClearBackground(Raylib.BLACK);
         for (int i = 0; i < 10000; i++)
         {
@@ -557,6 +554,5 @@ internal class Draw
                 MapIndex[testoutput.position] = 5;
             }
         }
-        Raylib.EndDrawing();
     }
 }

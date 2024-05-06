@@ -11,6 +11,7 @@ using ZeroElectric.Vinculum;
 using static System.Net.Mime.MediaTypeNames;
 internal class Game
 {
+    Random r = new Random();
     static Enemies enemies = new();
     static Draw draw = new(enemies);
     static Player player = new(draw);
@@ -18,10 +19,15 @@ internal class Game
     long number1 = 0;
     public int pos_x;
     public int pos_y;
+    Music background;
+    double delay = 0;
+    DateTime start = DateTime.Now;
+    DateTime check;
+    bool go = true;
     public void UnloadAll()
     {
         player.UnloadSfx();
-        refresh.UnloadMusic();
+        UnloadMusic();
     }
     public void Run()
     {
@@ -31,8 +37,8 @@ internal class Game
         while (true)
         {
             if (Console.LargestWindowWidth >= 200 || Console.LargestWindowHeight >= 50) { break; }
-            else 
-            { 
+            else
+            {
                 Console.WriteLine("Not enough space for game window. Display resolution should be atleast 1920x1080.");
                 Console.WriteLine($"Current possible console window width: {Console.LargestWindowWidth} | Required: 200");
                 Console.WriteLine($"Current possible console window height: {Console.LargestWindowHeight} | Required: 50");
@@ -55,18 +61,20 @@ internal class Game
         {
             Console.WriteLine("What do people call you?:");
             player.name = Console.ReadLine();
-            if(player.name != null & player.name.Length > 0)
+            if (player.name != null & player.name.Length > 0)
             {
                 break;
             }
             Console.WriteLine("Your name must have atleast one character");
         }
-        while (true) 
+        while (true)
         {
             Console.WriteLine("Select Race");
             foreach (int i in Enum.GetValues(typeof(Race)))
-            { Console.Write($"{Enum.GetName(typeof(Race), i)}");
-                Console.WriteLine($" {i}, "); }
+            {
+                Console.Write($"{Enum.GetName(typeof(Race), i)}");
+                Console.WriteLine($" {i}, ");
+            }
             string raceAnswer = Console.ReadLine();
             if (Enum.TryParse<Race>(raceAnswer, true, out player.race))
             {
@@ -94,8 +102,10 @@ internal class Game
         {
             Console.WriteLine("Select Class");
             foreach (int i in Enum.GetValues(typeof(Class)))
-            { Console.Write($"{Enum.GetName(typeof(Class), i)}");
-                Console.WriteLine($" {i}, "); }
+            {
+                Console.Write($"{Enum.GetName(typeof(Class), i)}");
+                Console.WriteLine($" {i}, ");
+            }
             string classAnswer = Console.ReadLine();
             if (Enum.TryParse<Class>(classAnswer, true, out player.Class))
             {
@@ -112,7 +122,7 @@ internal class Game
                 }
             }
             if (valid)
-            {   
+            {
                 player.Class = Enum.Parse<Class>(classAnswer, true);
                 break;
             }
@@ -123,8 +133,10 @@ internal class Game
         {
             Console.WriteLine("Choose player color. Choices are:");
             foreach (int i in Enum.GetValues(typeof(ConsoleColor)))
-            { Console.Write($"{Enum.GetName(typeof(ConsoleColor), i)}");
-                Console.WriteLine($" {i}, "); }
+            {
+                Console.Write($"{Enum.GetName(typeof(ConsoleColor), i)}");
+                Console.WriteLine($" {i}, ");
+            }
             string colorAnswer = Console.ReadLine();
             if (Enum.TryParse<ConsoleColor>(colorAnswer, true, out player.playerColor))
             {
@@ -164,30 +176,30 @@ internal class Game
                 default:
                     startmove = false;
                     break;
-                //case ConsoleKey.NumPad9:
-                //    startmove= false;
-                //    break;
-                //case ConsoleKey.NumPad8:
-                //    startmove = false;
-                //    break;
-                //case ConsoleKey.NumPad7:
-                //    startmove = false;
-                //    break;
-                //case ConsoleKey.NumPad6:
-                //    startmove = false;
-                //    break;
-                //case ConsoleKey.NumPad4:
-                //    startmove = false;
-                //    break;
-                //case ConsoleKey.NumPad3:
-                //    startmove = false;
-                //    break;
-                //case ConsoleKey.NumPad2:
-                //    startmove = false;
-                //    break;
-                //case ConsoleKey.NumPad1:
-                //    startmove = false;
-                //    break;
+                    //case ConsoleKey.NumPad9:
+                    //    startmove= false;
+                    //    break;
+                    //case ConsoleKey.NumPad8:
+                    //    startmove = false;
+                    //    break;
+                    //case ConsoleKey.NumPad7:
+                    //    startmove = false;
+                    //    break;
+                    //case ConsoleKey.NumPad6:
+                    //    startmove = false;
+                    //    break;
+                    //case ConsoleKey.NumPad4:
+                    //    startmove = false;
+                    //    break;
+                    //case ConsoleKey.NumPad3:
+                    //    startmove = false;
+                    //    break;
+                    //case ConsoleKey.NumPad2:
+                    //    startmove = false;
+                    //    break;
+                    //case ConsoleKey.NumPad1:
+                    //    startmove = false;
+                    //    break;
             }
         }
         Raylib.InitWindow(2000, 1000, "Raylib");
@@ -201,108 +213,87 @@ internal class Game
         player.Draw();
         player.AltDraw();
         bool game_running = true;
-        refresh.Update();
-        while (game_running)
+        if (r.Next(1, 3) == 1)
         {
-            ConsoleKeyInfo key = Console.ReadKey(true);
-            switch (key.Key)
-            {
-                case ConsoleKey.NumPad9:
-                    player.Move(1, -1);
-                    break;
-                case ConsoleKey.NumPad8:
-                    player.Move(0, -1);
-                    break;
-                case ConsoleKey.NumPad7:
-                    player.Move(-1, -1);
-                    break;
-                case ConsoleKey.NumPad6:
-                    player.Move(1, 0);
-                    break;
-                case ConsoleKey.NumPad4:
-                    player.Move(-1, 0);
-                    break;
-                case ConsoleKey.NumPad3:
-                    player.Move(1, 1);
-                    break;
-                case ConsoleKey.NumPad2:
-                    player.Move(0, 1);
-                    break;
-                case ConsoleKey.NumPad1:
-                    player.Move(-1, 1);
-                    break;
-                case ConsoleKey.Escape:
-                    game_running = false;
-                    break;
-                case ConsoleKey.Enter:
-                    Console.Clear();
-                    draw.GenerateMap();
-                    draw.DrawMap();
-                    break;
-                case ConsoleKey.Spacebar:
-                    Console.Clear();
-                    draw.DrawMap();
-                    break;
-                default:
-                    break;
-            }
-            player.Draw();
+            background = Raylib.LoadMusicStream("Sounds/E1-Fluffing-a-Duck.mp3");
         }
-
-    }
-    public static void Start()
-    {
-    }
-    public static void Update()
-    {
-        double delay = 0;
-        while (true)
+        else
         {
-
+            background = Raylib.LoadMusicStream("Sounds/E2-Monkeys-Spinning-Monkeys.mp3");
+        }
+        background.looping = true;
+        Raylib.PlayMusicStream(background);
+        while (!Raylib.WindowShouldClose())
+        {
+            Update();
+        }
+        UnloadAll();
+    }
+    public void UnloadMusic()
+    {
+        Raylib.UnloadMusicStream(background);
+    }
+    public void Update()
+    {
+            Raylib.UpdateMusicStream(background);
             if (delay > 0) { delay -= 0.1; }
-            if (Raylib.IsKeyPressed(KeyboardKey.KEY_KP_9) && delay <= 0)
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_9) && delay <= 0)
             {
                 player.Move(1, -1);
-                delay = 0.5;
+                delay = 0.2;
             }
-            if (Raylib.IsKeyPressed(KeyboardKey.KEY_KP_8) && delay <= 0)
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_8) && delay <= 0)
             {
                 player.Move(0, -1);
-                delay = 0.5;
+                delay = 0.2;
             }
-            if (Raylib.IsKeyPressed(KeyboardKey.KEY_KP_7) && delay <= 0)
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_7) && delay <= 0)
             {
                 player.Move(-1, -1);
-                delay = 0.5;
+                delay = 0.2;
             }
-            if (Raylib.IsKeyPressed(KeyboardKey.KEY_KP_6) && delay <= 0)
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_6) && delay <= 0)
             {
                 player.Move(1, 0);
-                delay = 0.5;
+                delay = 0.2;
             }
-            if (Raylib.IsKeyPressed(KeyboardKey.KEY_KP_4) && delay <= 0)
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_4) && delay <= 0)
             {
                 player.Move(-1, 0);
-                delay = 0.5;
+                delay = 0.2;
             }
-            if (Raylib.IsKeyPressed(KeyboardKey.KEY_KP_3) && delay <= 0)
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_3) && delay <= 0)
             {
                 player.Move(1, 1);
-                delay = 0.5;
+                delay = 0.2;
             }
-            if (Raylib.IsKeyPressed(KeyboardKey.KEY_KP_2) && delay <= 0)
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_2) && delay <= 0)
             {
                 player.Move(0, 1);
-                delay = 0.5;
+                delay = 0.2;
             }
-            if (Raylib.IsKeyPressed(KeyboardKey.KEY_KP_1) && delay <= 0)
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_1) && delay <= 0)
             {
                 player.Move(-1, 1);
-                delay = 0.5;
+                delay = 0.2;
             }
-            Raylib.BeginDrawing();
-            Raylib.ClearBackground(Raylib.BLACK);
-            Raylib.EndDrawing();
-        }
+        Raylib.BeginDrawing();
+        draw.AltDrawMap();
+        player.AltDraw();
+        Raylib.EndDrawing();
+            //if (go)
+            //{
+            //    Raylib.BeginDrawing();
+
+            //    Raylib.EndDrawing();
+            //    start = DateTime.Now;
+            //    go = false;
+            //}
+            //check = DateTime.Now;
+            //if (check.Subtract(start).TotalMilliseconds >= 80)
+            //{
+            //    go = true;
+
+            //}
     }
 }

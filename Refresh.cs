@@ -80,8 +80,7 @@ internal class Refresh
             if (go)
             {
                 Raylib.BeginDrawing();
-                Raylib.EndDrawing();
-                Raylib.BeginDrawing();
+                
                 Raylib.EndDrawing();
                 start = DateTime.Now;
                 go = false;

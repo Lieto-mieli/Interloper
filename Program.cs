@@ -14,6 +14,8 @@ internal class Program
             Enemy enemy = new Enemy();
             Game interloper = new Game();
             interloper.Run();
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("Start anew? Y/N");
             interloper.UnloadAll(); 
             if (Console.ReadLine() == "N")
