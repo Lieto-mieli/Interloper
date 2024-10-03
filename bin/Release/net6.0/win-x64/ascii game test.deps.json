@@ -12,6 +12,7 @@
           "Microsoft.NET.ILLink.Analyzers": "7.0.100-1.23211.1",
           "Microsoft.NET.ILLink.Tasks": "7.0.100-1.23211.1",
           "Newtonsoft.Json": "13.0.3",
+          "RayGuiCreator": "1.0.0",
           "Raylib-CSharp-Vinculum": "5.0.1",
           "System.Management": "8.0.0",
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "6.0.27"
@@ -918,6 +919,14 @@
             "fileVersion": "8.0.23.53103"
           }
         }
+      },
+      "RayGuiCreator/1.0.0": {
+        "dependencies": {
+          "Raylib-CSharp-Vinculum": "5.0.1"
+        },
+        "runtime": {
+          "RayGuiCreator.dll": {}
+        }
       }
     }
   },
@@ -980,6 +989,11 @@
       "sha512": "sha512-jrK22i5LRzxZCfGb+tGmke2VH7oE0DvcDlJ1HAKYU8cPmD8XnpUT0bYn2Gy98GEhGjtfbR/sxKTVb+dE770pfA==",
       "path": "system.management/8.0.0",
       "hashPath": "system.management.8.0.0.nupkg.sha512"
+    },
+    "RayGuiCreator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   },
   "runtimes": {

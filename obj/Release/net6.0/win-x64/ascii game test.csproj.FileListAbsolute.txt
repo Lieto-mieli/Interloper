@@ -261,3 +261,5 @@ C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\a
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\mscordaccore_amd64_amd64_6.0.2724.6912.dll
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\win-x64\ascii game test.sourcelink.json
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\win-x64\ascii ga.795FB278.Up2Date
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\RayGuiCreator.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\win-x64\RayGuiCreator.pdb

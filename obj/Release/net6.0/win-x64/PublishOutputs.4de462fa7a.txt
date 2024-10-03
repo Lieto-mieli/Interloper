@@ -16,4 +16,5 @@ C:\Users\s2200847\Documents\Visual Studio 2022\raylib.dll
 C:\Users\s2200847\Documents\Visual Studio 2022\raylib.exp
 C:\Users\s2200847\Documents\Visual Studio 2022\raylib.lib
 C:\Users\s2200847\Documents\Visual Studio 2022\raylib.pdb
+C:\Users\s2200847\Documents\Visual Studio 2022\RayGuiCreator.pdb
 C:\Users\s2200847\Documents\Visual Studio 2022\ascii game test.exe

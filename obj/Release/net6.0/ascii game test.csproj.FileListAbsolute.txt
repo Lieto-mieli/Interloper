@@ -41,3 +41,5 @@ C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\a
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\runtimes\win-x64\native\raylib.pdb
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\ascii game test.sourcelink.json
 C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\obj\Release\net6.0\ascii ga.795FB278.Up2Date
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\RayGuiCreator.dll
+C:\Users\s2200847\OneDrive - Business College Helsinki\visual studio projektit\ascii game test\bin\Release\net6.0\RayGuiCreator.pdb
