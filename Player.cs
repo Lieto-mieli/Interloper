@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using ZeroElectric.Vinculum;
 using static Game;
 
-public enum Race
+public enum Origin
 {
     Human,    //gains 1 extra upgrade
     Undead,   //has 2 extra hitpoints
@@ -26,7 +26,7 @@ internal class Player
 {
     static Random r = new Random();
     public string name = "";
-    public Race race;
+    public Origin origin;
     public Class Class;
     public ConsoleColor playerColor;
     public Point2D position;
@@ -201,6 +201,62 @@ internal class Player
                 tempcol = Raylib.MAGENTA;
                 break;
             case ConsoleColor.Gray: 
+                tempcol = Raylib.GRAY;
+                break;
+            case ConsoleColor.DarkRed:
+                tempcol = Raylib.MAROON;
+                break;
+        }
+        return tempcol;
+    }
+    public Color FromColorNOBAMBOOZLE(ConsoleColor c)
+    {
+        Color tempcol = Raylib.BLACK;
+        switch (c)
+        {
+            case ConsoleColor.Black:
+                tempcol = Raylib.BLACK;
+                break;
+            case ConsoleColor.DarkBlue:
+                tempcol = Raylib.DARKBLUE;
+                break;
+            case ConsoleColor.DarkGreen:
+                tempcol = Raylib.DARKGREEN;
+                break;
+            case ConsoleColor.DarkYellow:
+                tempcol = Raylib.GOLD;
+                break;
+            case ConsoleColor.DarkGray:
+                tempcol = Raylib.DARKGRAY;
+                break;
+            case ConsoleColor.DarkCyan:
+                tempcol = Raylib.SKYBLUE;
+                break;
+            case ConsoleColor.DarkMagenta:
+                tempcol = Raylib.VIOLET;
+                break;
+            case ConsoleColor.White:
+                tempcol = Raylib.WHITE;
+                break;
+            case ConsoleColor.Red:
+                tempcol = Raylib.RED;
+                break;
+            case ConsoleColor.Green:
+                tempcol = Raylib.GREEN;
+                break;
+            case ConsoleColor.Yellow:
+                tempcol = Raylib.YELLOW;
+                break;
+            case ConsoleColor.Cyan:
+                tempcol = Raylib.SKYBLUE;
+                break;
+            case ConsoleColor.Blue:
+                tempcol = Raylib.BLUE;
+                break;
+            case ConsoleColor.Magenta:
+                tempcol = Raylib.MAGENTA;
+                break;
+            case ConsoleColor.Gray:
                 tempcol = Raylib.GRAY;
                 break;
             case ConsoleColor.DarkRed:

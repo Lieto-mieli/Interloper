@@ -106,6 +106,19 @@
             "rid": "win"
           }
         }
+      },
+      "RayGuiCreator/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Raylib-CSharp-Vinculum": "5.0.1"
+        },
+        "compile": {
+          "bin/placeholder/RayGuiCreator.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RayGuiCreator.dll": {}
+        }
       }
     }
   },
@@ -247,11 +260,17 @@
         "system.management.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "RayGuiCreator/1.0.0": {
+      "type": "project",
+      "path": "../../Documents/RaylibMenuCreator/RayGuiCreator/RayGuiCreator/RayGuiCreator.csproj",
+      "msbuildProject": "../../Documents/RaylibMenuCreator/RayGuiCreator/RayGuiCreator/RayGuiCreator.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Newtonsoft.Json >= 13.0.3",
+      "RayGuiCreator >= 1.0.0",
       "Raylib-CSharp-Vinculum >= 5.0.1",
       "System.Management >= 8.0.0"
     ]
@@ -282,7 +301,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\Documents\\RaylibMenuCreator\\RayGuiCreator\\RayGuiCreator\\RayGuiCreator.csproj": {
+              "projectPath": "C:\\Users\\s2200847\\OneDrive - Business College Helsinki\\Documents\\RaylibMenuCreator\\RayGuiCreator\\RayGuiCreator\\RayGuiCreator.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
