@@ -11,7 +11,6 @@ internal class Program
         while (true)
         {
             Console.OutputEncoding = Encoding.UTF8;
-            Enemy enemy = new Enemy();
             Game interloper = new Game();
             interloper.Run();
             Console.WriteLine();

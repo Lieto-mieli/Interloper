@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ascii game test", "ascii ga
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RayGuiCreator", "..\..\Documents\RaylibMenuCreator\RayGuiCreator\RayGuiCreator\RayGuiCreator.csproj", "{37EBE5BA-5B59-4604-8E16-922ED11CCC33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnemyEditor", "..\EnemyEditor\EnemyEditor.csproj", "{58302D22-A8E4-4D1E-8248-2A6A07790580}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{37EBE5BA-5B59-4604-8E16-922ED11CCC33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37EBE5BA-5B59-4604-8E16-922ED11CCC33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37EBE5BA-5B59-4604-8E16-922ED11CCC33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58302D22-A8E4-4D1E-8248-2A6A07790580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58302D22-A8E4-4D1E-8248-2A6A07790580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58302D22-A8E4-4D1E-8248-2A6A07790580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58302D22-A8E4-4D1E-8248-2A6A07790580}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

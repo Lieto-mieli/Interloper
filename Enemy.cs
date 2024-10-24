@@ -6,15 +6,27 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
-internal class Enemy
+public class Enemy
 {
+    public override string ToString()
+    {
+        return $"{this.Name}, {this.SpriteID}, {this.health}";
+    }
+    public Enemy(string Name, int SpriteID, int Health)
+    {
+        this.Name = Name;
+        this.SpriteID = SpriteID;
+        health = Health;
+    }
     Random r = new Random();
-    public int health;
+    public int health { get; set; }
     public string[] attackStyles = new string[10];
     public string vanity;
     public int position;
+    public string Name { get; set; }
+    public int SpriteID { get; set; }
     public ConsoleColor color;
-    public string[] Q = new string[]
+    public string[] dog = new string[]
     {
             "beam",
             "widemelee",
@@ -23,22 +35,51 @@ internal class Enemy
     public void CreateEnemy(int nro, int pos)
     {
         // makes new json file representing an enemy on the map
-        Enemy enemy = new Enemy();
+        Enemy enemy = new Enemy("dog", 1, 12);
         enemy.position = pos;
         enemy.health = 12;
-        enemy.vanity = "Q";
+        enemy.vanity = "dog";
         switch(vanity)
         {
-            case "Q":
-                for (int i = 0; i < Q.Length; i++)
+            case "dog":
+                for (int i = 0; i < dog.Length; i++)
                 {
-                    enemy.attackStyles[i] = Q[i];
+                    enemy.attackStyles[i] = dog[i];
                 }
                 break;
         }
         enemy.color = (ConsoleColor)health;
         string output = JsonConvert.SerializeObject(enemy);
         using (StreamWriter outputFile = new StreamWriter(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"Enemy{nro}.json"))) 
+        {
+            outputFile.Write(output);
+            //Debug.Write(output);
+        }
+        // reads a json file which represents an enemy, allowing it to interact with the game
+        using (StreamReader outputFile = new StreamReader(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"Enemy{nro}.json")))
+        {
+            Enemy testoutput = JsonConvert.DeserializeObject<Enemy>(outputFile.ReadToEnd());
+            Debug.Write(testoutput.health);
+        }
+    }
+    public void CopyEnemy(int nro, int pos, Enemy template)
+    {
+        Enemy enemy = new Enemy("dog", 1, 12);
+        enemy.position = pos;
+        enemy.health = template.health;
+        enemy.vanity = template.Name;
+        switch (vanity)
+        {
+            case "dog":
+                for (int i = 0; i < dog.Length; i++)
+                {
+                    enemy.attackStyles[i] = dog[i];
+                }
+                break;
+        }
+        enemy.color = (ConsoleColor)health;
+        string output = JsonConvert.SerializeObject(enemy);
+        using (StreamWriter outputFile = new StreamWriter(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"Enemy{nro}.json")))
         {
             outputFile.Write(output);
             //Debug.Write(output);
