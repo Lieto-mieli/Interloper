@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 internal class Enemies
 {
-    Enemy enemy = new Enemy("dog", 1, 12);
+    Enemy enemy = new Enemy();
     int nro = 0;
     Random r = new Random();
     public static int BinaryRandom(int resultA, int resultB, int resultAchance, int resultBchance)

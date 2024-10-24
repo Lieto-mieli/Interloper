@@ -8,17 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 public class Enemy
 {
-    public override string ToString()
-    {
-        return $"{this.Name}, {this.SpriteID}, {this.health}";
-    }
-    public Enemy(string Name, int SpriteID, int Health)
-    {
-        this.Name = Name;
-        this.SpriteID = SpriteID;
-        health = Health;
-    }
-    Random r = new Random();
     public int health { get; set; }
     public string[] attackStyles = new string[10];
     public string vanity;
@@ -35,7 +24,7 @@ public class Enemy
     public void CreateEnemy(int nro, int pos)
     {
         // makes new json file representing an enemy on the map
-        Enemy enemy = new Enemy("dog", 1, 12);
+        Enemy enemy = new Enemy();
         enemy.position = pos;
         enemy.health = 12;
         enemy.vanity = "dog";
@@ -64,7 +53,7 @@ public class Enemy
     }
     public void CopyEnemy(int nro, int pos, Enemy template)
     {
-        Enemy enemy = new Enemy("dog", 1, 12);
+        Enemy enemy = new Enemy();
         enemy.position = pos;
         enemy.health = template.health;
         enemy.vanity = template.Name;
