@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using ZeroElectric.Vinculum;
 internal class Program
 {
-    public static void Main()
+    public static void Main() //Mainloop which starts the game, lots of depricated code for the .net console version of the game as always.
     {
         while (true)
         {

@@ -8,7 +8,6 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using ZeroElectric.Vinculum;
-using static System.Net.Mime.MediaTypeNames;
 using RayGuiCreator;
 internal class Game
 {
@@ -16,16 +15,9 @@ internal class Game
     static Enemies enemies = new();
     static Draw draw = new(enemies);
     static Player player = new(draw);
-    static Refresh refresh = new(player);
-    long number1 = 0;
-    public int pos_x;
-    public int pos_y;
-    Music background;
-    double delay = 0;
-    DateTime start = DateTime.Now;
-    DateTime check;
-    bool go = true;
-    string inMenu = "main"; // states are "main", "character", "setting", and "none"
+    Music background; //this is set to one of two kevin macleod tracks
+    double delay = 0; //delay is used to make the game not run at ludicrous speeds by waiting multiple 'Update()' calls between player movements
+    string inMenu = "main"; // states are "main", "character"(creation), "setting", and "none"(ingame)
     int spinnerValue = 0;
     bool spinnerEditActive = false;
     TextBoxEntry playerNameEntry = new TextBoxEntry(15);
@@ -44,17 +36,17 @@ internal class Game
     });
     string mostRecentBranchMenu;
     float volume = 1.0f;
-    public void UnloadAll()
+    public void UnloadAll() //unloads sfx and music
     {
         player.UnloadSfx();
         UnloadMusic();
     }
-    public void Run()
+    public void Run() //this is called at the start of the game from 'Program.cs'
     {
         Console.WriteLine(Console.LargestWindowWidth);
         Console.WriteLine(Console.LargestWindowHeight);
 
-        while (true)
+        while (true) //more .net console shittis, sorry for the mess :(
         {
             if (Console.LargestWindowWidth >= 200 || Console.LargestWindowHeight >= 50) { break; }
             else
@@ -77,154 +69,155 @@ internal class Game
         Console.WriteLine("Monkeys Spinning Monkeys Kevin MacLeod (incompetech.com) and Fluffing a Duck Kevin MacLeod (incompetech.com) Both licensed under Creative Commons: By Attribution 3.0 License http://creativecommons.org/licenses/by/3.0/");
         Console.WindowWidth = 60;
         Console.WindowHeight = 25;
-        if (false)
-        {
-            while (true)
-            {
-                Console.WriteLine("What do people call you?:");
-                player.name = Console.ReadLine();
-                if (player.name != null & player.name.Length > 0)
-                {
-                    break;
-                }
-                Console.WriteLine("Your name must have atleast one character");
-            }
-            while (true)
-            {
-                Console.WriteLine("Select Origin");
-                foreach (int i in Enum.GetValues(typeof(Origin)))
-                {
-                    Console.Write($"{Enum.GetName(typeof(Origin), i)}");
-                    Console.WriteLine($" {i}, ");
-                }
-                string originAnswer = Console.ReadLine();
-                if (Enum.TryParse<Origin>(originAnswer, true, out player.origin))
-                {
-                    if (long.TryParse(originAnswer, out number1))
-                    {
-                        if (Convert.ToInt64(originAnswer) <= Enum.GetNames(typeof(Origin)).Length - 1)
-                        {
-                            valid = true;
-                        }
-                    }
-                    else
-                    {
-                        valid = true;
-                    }
-                }
-                if (valid)
-                {
-                    player.origin = Enum.Parse<Origin>(originAnswer, true);
-                    break;
-                }
-                Console.WriteLine("Invalid selection. Please input the name of a origin, or its order in the list");
-            }
-            valid = false;
-            while (true)
-            {
-                Console.WriteLine("Select Class");
-                foreach (int i in Enum.GetValues(typeof(Class)))
-                {
-                    Console.Write($"{Enum.GetName(typeof(Class), i)}");
-                    Console.WriteLine($" {i}, ");
-                }
-                string classAnswer = Console.ReadLine();
-                if (Enum.TryParse<Class>(classAnswer, true, out player.Class))
-                {
-                    if (long.TryParse(classAnswer, out number1))
-                    {
-                        if (Convert.ToInt64(classAnswer) <= Enum.GetNames(typeof(Class)).Length - 1)
-                        {
-                            valid = true;
-                        }
-                    }
-                    else
-                    {
-                        valid = true;
-                    }
-                }
-                if (valid)
-                {
-                    player.Class = Enum.Parse<Class>(classAnswer, true);
-                    break;
-                }
-                Console.WriteLine("Invalid selection. Please input the name of a class, or its order in the list");
-            }
-            valid = false;
-            while (true)
-            {
-                Console.WriteLine("Choose player color. Choices are:");
-                foreach (int i in Enum.GetValues(typeof(ConsoleColor)))
-                {
-                    Console.Write($"{Enum.GetName(typeof(ConsoleColor), i)}");
-                    Console.WriteLine($" {i}, ");
-                }
-                string colorAnswer = Console.ReadLine();
-                if (Enum.TryParse<ConsoleColor>(colorAnswer, true, out player.playerColor))
-                {
-                    if (long.TryParse(colorAnswer, out number1))
-                    {
-                        if (Convert.ToInt64(colorAnswer) < Enum.GetNames(typeof(ConsoleColor)).Length)
-                        {
-                            valid = true;
-                        }
-                    }
-                    else
-                    {
-                        valid = true;
-                    }
-                }
-                if (valid)
-                {
-                    player.playerColor = Enum.Parse<ConsoleColor>(colorAnswer, true);
-                    break;
-                }
-                Console.WriteLine("Invalid selection. Please input the name of a color, or its order in the list");
-            }
-            Console.WindowWidth = 200;
-            Console.WindowHeight = 50;
-            Console.WriteLine($"Name: {player.name} | Origin: {player.origin} | Class: {player.Class} | Color: {player.playerColor}");
-            Console.WriteLine("Countless have ventured into this place over the years. Few have made it out with their lives. None have gotten to it's elusive center, that which lies to the west.");
-            Console.WriteLine("Today you are to become one of many in your attempt to explore this cursed city. And it is unlikely you will be the last. Take your first steps and accept your impending fate.");
-            Console.CursorVisible = false;
-            player.position = new Point2D(10, 25);
-            player.Draw();
-            bool startmove = true;
-            while (startmove)
-            {
-                ConsoleKeyInfo key = Console.ReadKey(true);
-                switch (key.Key)
-                {
-                    default:
-                        startmove = false;
-                        break;
-                        //case ConsoleKey.NumPad9:
-                        //    startmove= false;
-                        //    break;
-                        //case ConsoleKey.NumPad8:
-                        //    startmove = false;
-                        //    break;
-                        //case ConsoleKey.NumPad7:
-                        //    startmove = false;
-                        //    break;
-                        //case ConsoleKey.NumPad6:
-                        //    startmove = false;
-                        //    break;
-                        //case ConsoleKey.NumPad4:
-                        //    startmove = false;
-                        //    break;
-                        //case ConsoleKey.NumPad3:
-                        //    startmove = false;
-                        //    break;
-                        //case ConsoleKey.NumPad2:
-                        //    startmove = false;
-                        //    break;
-                        //case ConsoleKey.NumPad1:
-                        //    startmove = false;
-                        //    break;
-                }
-            }
-        }
+        //this whole thing is worthless for the raylib version but i hold out hope that one day we will return to the .net version "This too shall pass."
+        //if (false) 
+        //{
+        //    while (true)
+        //    {
+        //        Console.WriteLine("What do people call you?:");
+        //        player.name = Console.ReadLine();
+        //        if (player.name != null & player.name.Length > 0)
+        //        {
+        //            break;
+        //        }
+        //        Console.WriteLine("Your name must have atleast one character");
+        //    }
+        //    while (true)
+        //    {
+        //        Console.WriteLine("Select Origin");
+        //        foreach (int i in Enum.GetValues(typeof(Origin)))
+        //        {
+        //            Console.Write($"{Enum.GetName(typeof(Origin), i)}");
+        //            Console.WriteLine($" {i}, ");
+        //        }
+        //        string originAnswer = Console.ReadLine();
+        //        if (Enum.TryParse<Origin>(originAnswer, true, out player.origin))
+        //        {
+        //            if (long.TryParse(originAnswer, out number1))
+        //            {
+        //                if (Convert.ToInt64(originAnswer) <= Enum.GetNames(typeof(Origin)).Length - 1)
+        //                {
+        //                    valid = true;
+        //                }
+        //            }
+        //            else
+        //            {
+        //                valid = true;
+        //            }
+        //        }
+        //        if (valid)
+        //        {
+        //            player.origin = Enum.Parse<Origin>(originAnswer, true);
+        //            break;
+        //        }
+        //        Console.WriteLine("Invalid selection. Please input the name of a origin, or its order in the list");
+        //    }
+        //    valid = false;
+        //    while (true)
+        //    {
+        //        Console.WriteLine("Select Class");
+        //        foreach (int i in Enum.GetValues(typeof(Class)))
+        //        {
+        //            Console.Write($"{Enum.GetName(typeof(Class), i)}");
+        //            Console.WriteLine($" {i}, ");
+        //        }
+        //        string classAnswer = Console.ReadLine();
+        //        if (Enum.TryParse<Class>(classAnswer, true, out player.Class))
+        //        {
+        //            if (long.TryParse(classAnswer, out number1))
+        //            {
+        //                if (Convert.ToInt64(classAnswer) <= Enum.GetNames(typeof(Class)).Length - 1)
+        //                {
+        //                    valid = true;
+        //                }
+        //            }
+        //            else
+        //            {
+        //                valid = true;
+        //            }
+        //        }
+        //        if (valid)
+        //        {
+        //            player.Class = Enum.Parse<Class>(classAnswer, true);
+        //            break;
+        //        }
+        //        Console.WriteLine("Invalid selection. Please input the name of a class, or its order in the list");
+        //    }
+        //    valid = false;
+        //    while (true)
+        //    {
+        //        Console.WriteLine("Choose player color. Choices are:");
+        //        foreach (int i in Enum.GetValues(typeof(ConsoleColor)))
+        //        {
+        //            Console.Write($"{Enum.GetName(typeof(ConsoleColor), i)}");
+        //            Console.WriteLine($" {i}, ");
+        //        }
+        //        string colorAnswer = Console.ReadLine();
+        //        if (Enum.TryParse<ConsoleColor>(colorAnswer, true, out player.playerColor))
+        //        {
+        //            if (long.TryParse(colorAnswer, out number1))
+        //            {
+        //                if (Convert.ToInt64(colorAnswer) < Enum.GetNames(typeof(ConsoleColor)).Length)
+        //                {
+        //                    valid = true;
+        //                }
+        //            }
+        //            else
+        //            {
+        //                valid = true;
+        //            }
+        //        }
+        //        if (valid)
+        //        {
+        //            player.playerColor = Enum.Parse<ConsoleColor>(colorAnswer, true);
+        //            break;
+        //        }
+        //        Console.WriteLine("Invalid selection. Please input the name of a color, or its order in the list");
+        //    }
+        //    Console.WindowWidth = 200;
+        //    Console.WindowHeight = 50;
+        //    Console.WriteLine($"Name: {player.name} | Origin: {player.origin} | Class: {player.Class} | Color: {player.playerColor}");
+        //    Console.WriteLine("Countless have ventured into this place over the years. Few have made it out with their lives. None have gotten to it's elusive center, that which lies to the west.");
+        //    Console.WriteLine("Today you are to become one of many in your attempt to explore this cursed city. And it is unlikely you will be the last. Take your first steps and accept your impending fate.");
+        //    Console.CursorVisible = false;
+        //    player.position = new Point2D(10, 25);
+        //    player.Draw();
+        //    bool startmove = true;
+        //    while (startmove)
+        //    {
+        //        ConsoleKeyInfo key = Console.ReadKey(true);
+        //        switch (key.Key)
+        //        {
+        //            default:
+        //                startmove = false;
+        //                break;
+        //                //case ConsoleKey.NumPad9:
+        //                //    startmove= false;
+        //                //    break;
+        //                //case ConsoleKey.NumPad8:
+        //                //    startmove = false;
+        //                //    break;
+        //                //case ConsoleKey.NumPad7:
+        //                //    startmove = false;
+        //                //    break;
+        //                //case ConsoleKey.NumPad6:
+        //                //    startmove = false;
+        //                //    break;
+        //                //case ConsoleKey.NumPad4:
+        //                //    startmove = false;
+        //                //    break;
+        //                //case ConsoleKey.NumPad3:
+        //                //    startmove = false;
+        //                //    break;
+        //                //case ConsoleKey.NumPad2:
+        //                //    startmove = false;
+        //                //    break;
+        //                //case ConsoleKey.NumPad1:
+        //                //    startmove = false;
+        //                //    break;
+        //        }
+        //    }
+        //}
         Console.WindowWidth = 200;
         Console.WindowHeight = 50;
         Console.CursorVisible = false;
@@ -257,55 +250,55 @@ internal class Game
         }
         UnloadAll();
     }
-    public void UnloadMusic()
+    public void UnloadMusic() //unloads the currently playing music
     {
         Raylib.UnloadMusicStream(background);
     }
-    public void Update()
+    public void Update() // runs every frame
     {
-        Raylib.UpdateMusicStream(background);
+        Raylib.UpdateMusicStream(background); 
         if (delay > 0) { delay -= 0.1; }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_9) && delay <= 0)
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_9) && delay <= 0) //player moves North East
         {
             player.Move(1, -1);
             delay = 0.2;
         }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_8) && delay <= 0)
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_8) && delay <= 0) //player moves North
         {
             player.Move(0, -1);
             delay = 0.2;
         }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_7) && delay <= 0)
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_7) && delay <= 0) //player moves North West
         {
             player.Move(-1, -1);
             delay = 0.2;
         }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_6) && delay <= 0)
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_6) && delay <= 0) //player moves East
         {
             player.Move(1, 0);
             delay = 0.2;
         }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_4) && delay <= 0)
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_4) && delay <= 0) //player moves West
         {
             player.Move(-1, 0);
             delay = 0.2;
         }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_3) && delay <= 0)
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_3) && delay <= 0) //player moves South East
         {
             player.Move(1, 1);
             delay = 0.2;
         }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_2) && delay <= 0)
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_2) && delay <= 0) //player moves South
         {
             player.Move(0, 1);
             delay = 0.2;
         }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_1) && delay <= 0)
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_KP_1) && delay <= 0) //player moves South West
         {
             player.Move(-1, 1);
             delay = 0.2;
         }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_ENTER) && delay <= 0)
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_ENTER) && delay <= 0) //changes game state between ingame and pause menu
         {
             if (inMenu == "none")
             {
@@ -318,24 +311,24 @@ internal class Game
                 delay = 0.2;
             }
         }
-        if (inMenu == "main")
+        if (inMenu == "main")//draws the mainmenu
         {
             DrawMainMenu();
         }
-        else if (inMenu == "pause")
+        else if (inMenu == "pause")//draws the pausemenu
         {
             DrawPauseMenu();
         }
-        else if (inMenu == "setting")
+        else if (inMenu == "setting") //draws the settingsmenu
         {
             DrawSettingMenu();
             //draw settings menu
         }
-        else if (inMenu == "character")
+        else if (inMenu == "character") //draws the character creation interface
         {
             DrawCharacterCreation();
         }
-        else
+        else //draws the ingame view
         {
             Raylib.BeginDrawing();
             draw.AltDrawMap();
