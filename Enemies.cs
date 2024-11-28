@@ -11,7 +11,7 @@ internal class Enemies
     Enemy enemy = new Enemy();
     int nro = 0;
     Random r = new Random();
-    public static int BinaryRandom(int resultA, int resultB, int resultAchance, int resultBchance)
+    public static int BinaryRandom(int resultA, int resultB, int resultAchance, int resultBchance)//returns 'resultA' with 'resultAchance' weight and 'resultB' with 'resultBchance' weight
     {
         int returner = 1;
         WeightedChanceExecutor weightedChanceExecutor = new WeightedChanceExecutor
@@ -28,7 +28,7 @@ internal class Enemies
         weightedChanceExecutor.Execute();
         return returner;
     }
-    public int GenerateEnemies(int[] mapindex, int levelnum)
+    public int GenerateEnemies(int[] mapindex, int levelnum)//Generates a random amount of enemies inside of buildings in the level
     {
         for (int i = 0; i < 10000; i++)
         {

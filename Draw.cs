@@ -45,7 +45,7 @@ internal class Draw
         return $"{input[0].ToString().ToUpper()}{input.Substring(1)}";
         //capitalizes first letter of string
     }
-    public static int BinaryRandom(int resultA, int resultB, int resultAchance, int resultBchance)
+    public static int BinaryRandom(int resultA, int resultB, int resultAchance, int resultBchance)//returns 'resultA' with 'resultAchance' weight and 'resultB' with 'resultBchance' weight
     {
         int returner = 1;
         WeightedChanceExecutor weightedChanceExecutor = new WeightedChanceExecutor
@@ -62,7 +62,7 @@ internal class Draw
         weightedChanceExecutor.Execute();
         return returner;
     }
-    public static int[][] GenerateHouses(int amount)
+    public static int[][] GenerateHouses(int amount)//generates a set of buildings to make navigation more interesting for the player
     {
         int houseAmount = r.Next(amount - 1, amount + 2);
         int[][] temparr = new int[houseAmount][];
@@ -86,13 +86,13 @@ internal class Draw
     {
         int[][] Houses = GenerateHouses(levelNum + 5);
         int treeDensity = r.Next(12 - levelNum, 16 - levelNum);
-        for (int i = 0; i < 10000; i++)
+        for (int i = 0; i < 10000; i++)//generates trees based on how close the player has gotten to the center
         {
             MapIndex[i] = BinaryRandom(0, 3, 90, treeDensity);
 
         }
         int currenthousepos;
-        for (int i = 0; i < Houses.Length; i++)
+        for (int i = 0; i < Houses.Length; i++)//inserts generated buildings onto level
         {
             currenthousepos = Xpos[i] + (200 * Ypos[i]);
             for (int row = 0; row + 1 < Houses[i].Length / houseLengths[i]; row++)
@@ -105,7 +105,7 @@ internal class Draw
             }
         }
         bool upgDone = true;
-        while (upgDone)
+        while (upgDone)//places upgrade onto a random indoor tile
         {
             int randoSpot = r.Next(0, 10000);
             if (MapIndex[randoSpot] == 1)
@@ -167,7 +167,7 @@ internal class Draw
     };
     public void Refuse()
     {
-        //this upgrade does nothing, simply here to avoid null reference
+        //this upgrade does nothing, method exists to avoid null reference
     }
     static string[][] class0lists = new string[][]
     {
@@ -207,7 +207,7 @@ internal class Draw
     };
     public void Buckshot()
     {
-        //this upgrade flips a bool to allows ranged attacks to be made in the 8 possible directions, does very high damage and even higher damage when chosen again. drawback is that it needs to be used once again to reload so you cna fire it again
+        //this upgrade flips a bool to allows ranged attacks to be made in the 8 possible directions, does very high damage and even higher damage when chosen again. drawback is that it needs to be used once again to reload so you can fire it again
     }
     static string[] theory = new string[]
     {
@@ -331,7 +331,7 @@ internal class Draw
 
     //here ends the lists of upgrades
     int outTest;
-    public void UpgradeGet(Class Pclass, ConsoleColor Pcolor)
+    public void UpgradeGet(Class Pclass, ConsoleColor Pcolor)//draw the upgrade menu, has old worthless code and raylib code interspersed but i dont want to risk breaking it
     {
         // lataan tekstuurit tässä koska se pitää tehdä window initialisaation jälkeen ja oon laiska
         upgClassPngs[0][0] = Raylib.LoadTexture("Textures/0-Strength.png");
@@ -368,13 +368,12 @@ internal class Draw
         Raylib.BeginDrawing();
         Raylib.EndDrawing();
         Raylib.BeginDrawing();
-        // I give up, tää paska ei oo worth it, jesus mä tuun hulluks jos mä joudun ikinä käyttämään tätä saatanan raylibiä uudestaan jossain projektissä.
+        // *Raylib rant removed*
         Debug.WriteLine("");
         Debug.WriteLine(Raylib.GetCodepoint('═', out outTest));
         Debug.WriteLine(Char.ConvertFromUtf32(Raylib.GetCodepoint('═', out outTest)));
         Debug.WriteLine(Char.ConvertFromUtf32(outTest));
         Debug.WriteLine("");
-        //Raylib.DrawTextEx(font, "╔", new System.Numerics.Vector2(50 * 10, 30 * 20), 20,0, tempcolor);
         Raylib.DrawRectangle(50 * 10, 30 * 20, 10, 21 * 20, tempcolor);
         Raylib.DrawRectangle(51 * 10, 30 * 20, 10 * 100, 20, tempcolor);
         Raylib.DrawRectangle(150 * 10, 30 * 20, 10, 21 * 20, tempcolor);
@@ -382,10 +381,6 @@ internal class Draw
         Raylib.DrawTexture(upgClassPngs[0][0], 60*10, 35*20, Raylib.WHITE);
         Raylib.DrawRectangle((71 * 10)+5, (37 * 20)+10, 30, 30, Raylib.BLACK);
         Debug.WriteLine(upgClassPngs[0][0]);
-        //for (int i = 0; i < 1; i++)
-        //{
-        //    Raylib.DrawTextEx(font, "═", new System.Numerics.Vector2((50 + i + 1) * 10, 30 * 20), 20, 0, tempcolor);
-        //}
         string upg1temp = upgClassLists[(int)Pclass][option1][7];
         string upg2temp = upgClassLists[(int)Pclass][option2][7];
         string upg3temp = upgClassLists[(int)Pclass][option3][7];
@@ -428,7 +423,7 @@ internal class Draw
         Console.Clear();
         DrawMap();
     }
-    public void UpgChoice(int X, int Y, Class upgClass, int order)
+    public void UpgChoice(int X, int Y, Class upgClass, int order)//im gonna be real, i have no idea what the bozo was on while writing this
     {
         int currentoption = 0;
         bool tempdone = true;
@@ -478,7 +473,6 @@ internal class Draw
         }
         Raylib.DrawTexture(upgClassPngs[(int)upgClass][currentoption], X * 10, Y * 20, Raylib.WHITE);
         Raylib.DrawRectangle(((X + 11) * 10) + 5, ((Y + 2) * 20) + 10, 30, 30, Raylib.BLACK);
-        // Raylib.DrawText(Convert.ToString($"({order})"), ((X + 12) * 10) + 5, ((Y + 2) * 20) + 15, 20, Player.FromColor(Enum.Parse<ConsoleColor>(upgClassLists[(int)upgClass][currentoption][8])));
         Raylib.DrawTextEx(font, Convert.ToString($"({order})"), new Vector2(((X + 12) * 10) + 5, ((Y + 2) * 20) + 15), 20, 20, Player.FromColor(Enum.Parse<ConsoleColor>(upgClassLists[(int)upgClass][currentoption][8])));
     }
     // 0 = " " = nothing
@@ -487,7 +481,7 @@ internal class Draw
     // 3 = "ƒ" = tree
     // 4 = "-" | "§" when close = upgrade
     // 5 = "%" = enemy
-    public void DrawMap()
+    public void DrawMap()//old method, now useless
     {
         for (int i = 0; i < 10000; i++)
         {
@@ -520,7 +514,7 @@ internal class Draw
             }
         }
     }
-    public void AltDrawMap()
+    public void AltDrawMap()//draws map
     {
         Raylib.ClearBackground(Raylib.BLACK);
         for (int i = 0; i < 10000; i++)

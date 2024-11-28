@@ -50,61 +50,36 @@ internal class Player
         // If 'a' is not greater than 'b', return the difference of 'b' and 'a'
         return b - a;
     }
-    public void LoadSfx()
+    public void LoadSfx()// loads the player walksound
     {
         walksfx = Raylib.LoadSound("Sounds/P1-Metalpipe.mp3");
     }
-    public void UnloadSfx()
+    public void UnloadSfx()//unloads the player walksound
     {
         Raylib.UnloadSound(walksfx);
     }
-    public void Move(int x_move, int y_move)
+    public void Move(int x_move, int y_move)//handles player movement depending on which keypad button was pressed
     {
         position.x += x_move;
         position.y += y_move;
-        position.x = Math.Clamp(position.x, 0, Console.WindowWidth - 1);
-        position.y = Math.Clamp(position.y, 0, Console.WindowHeight - 1);
-        if (draw.MapIndex[position.x + (position.y * 200)]==2 || draw.MapIndex[position.x + (position.y * 200)] == 3 || draw.MapIndex[position.x + (position.y * 200)] == 5)
+        position.x = Math.Clamp(position.x, 0, Console.WindowWidth - 1);//keeps player within map boundaries on the x axis
+        position.y = Math.Clamp(position.y, 0, Console.WindowHeight - 1);//keeps player within map boundaries on the y axis
+        if (draw.MapIndex[position.x + (position.y * 200)]==2 || draw.MapIndex[position.x + (position.y * 200)] == 3 || draw.MapIndex[position.x + (position.y * 200)] == 5)//stops player from moving into tiles with impassable id types
         {
             position.x -= x_move;
             position.y -= y_move;
-            // dont spend turn!
         }
-        else if (false)
+        else if (false)//this is a placeholder "else if" that was planned for attacking enemies
         {
             // this will execute when moving to an enemy(attacking)
         }
         else
         {
-            Raylib.PlaySound(walksfx);
-            //spend turn on movement
-            //Console.SetCursorPosition(position.x-x_move, position.y-y_move);
-            //Raylib.BeginDrawing();
-            //Raylib.EndDrawing();
-            //Raylib.BeginDrawing();
-            //Color tempcolor = FromColor(playerColor);
-            //Raylib.DrawRectangle(position.x * 10, position.y * 20, 10, 20, tempcolor);
-            //switch (draw.MapIndex[position.x-x_move + ((position.y-y_move) * 200)])
-            //{
-            //        case 0:
-            //            Raylib.DrawRectangle((position.x - x_move) * 10, (position.y - y_move) * 20, 10, 20, Raylib.BLACK);
-            //        Debug.WriteLine("on nolla");
-            //        break;
-            //        case 1:
-            //            Raylib.DrawRectangle((position.x - x_move) * 10, (position.y - y_move) * 20, 10, 20, Raylib.GRAY);
-            //        Debug.WriteLine("on yksi");
-            //        break;
-            //        default:
-            //        Debug.WriteLine("ei vapaa");
-            //        break;
-            //}
-            //Debug.WriteLine($"{position.x - x_move} {position.y - y_move}");
-            //Debug.WriteLine(draw.MapIndex[position.x - x_move + ((position.y - y_move) * 200)]);
-            //Raylib.EndDrawing();
+            Raylib.PlaySound(walksfx);//plays the player walksound
         }
-        int Y = Convert.ToInt32(draw.upgPos/200);
+        int Y = Convert.ToInt32(draw.upgPos/200);//update internal values
         int X = draw.upgPos - (Y * 200);
-        if ((AbsDiff(X,position.x)+AbsDiff(Y,position.y))<10 && draw.MapIndex[draw.upgPos]==4)
+        if ((AbsDiff(X,position.x)+AbsDiff(Y,position.y))<10 && draw.MapIndex[draw.upgPos]==4)//checks if player is close enough to upgrade for it to be visible, if so then draw the upgrade
         {
             Console.SetCursorPosition(X, Y);
             Console.BackgroundColor = ConsoleColor.Gray;
@@ -113,11 +88,10 @@ internal class Player
             Raylib.BeginDrawing();
             Raylib.EndDrawing();
             Raylib.BeginDrawing();
-            //Raylib.DrawTriangle(new Vector2(X * 10,Y * 20), new Vector2((X * 10)+5, (Y * 20)-5), new Vector2((X * 10)+10, Y * 20), tempcolor);
             Raylib.DrawPoly(new Vector2((X * 10)+5,(Y * 20)+10), 6, 8, 0, tempcolor);
             Raylib.EndDrawing();
         } 
-        if (position.x + (position.y * 200) == draw.upgPos)
+        if (position.x + (position.y * 200) == draw.upgPos)//if player is at the upgrade, show upgrade menu
         {
             draw.MapIndex[draw.upgPos] = 1;
             draw.UpgradeGet(Class, playerColor);
@@ -125,7 +99,7 @@ internal class Player
         }
         Debug.Write(position.x + (position.y * 200)," ");
     }
-    public void Draw()
+    public void Draw()//deprecated, doesnt do anything with raylib
     {
         Console.ForegroundColor = playerColor;
         if (draw.MapIndex[position.x + (position.y * 200)] == 1)
@@ -140,7 +114,7 @@ internal class Player
         Console.Write(image);
         Console.CursorVisible = false;
     }
-    public void AltDraw()
+    public void AltDraw()//draws player and powerup
     {
         Color tempcolor = FromColor(playerColor);
         Raylib.DrawRectangle(position.x * 10, position.y * 20, 10, 20, tempcolor);
@@ -149,11 +123,10 @@ internal class Player
         if ((AbsDiff(X, position.x) + AbsDiff(Y, position.y)) < 10 && draw.MapIndex[draw.upgPos] == 4)
         {
             tempcolor = FromColor((ConsoleColor)r.Next(1, 16));
-            //Raylib.DrawTriangle(new Vector2(X * 10,Y * 20), new Vector2((X * 10)+5, (Y * 20)-5), new Vector2((X * 10)+10, Y * 20), tempcolor);
             Raylib.DrawPoly(new Vector2((X * 10) + 5, (Y * 20) + 10), 6, 8, 0, tempcolor);
         }
     }
-    public static Color FromColor(ConsoleColor c)
+    public static Color FromColor(ConsoleColor c)//turns console colors into raylib equivalents
     {
         Color tempcol = Raylib.BLACK;
         switch (c)
@@ -209,7 +182,7 @@ internal class Player
         }
         return tempcol;
     }
-    public Color FromColorNOBAMBOOZLE(ConsoleColor c)
+    public Color FromColorNOBAMBOOZLE(ConsoleColor c)//turns console colors into raylib equivalents, also this one isnt static and that appeases the code gods for some reason
     {
         Color tempcol = Raylib.BLACK;
         switch (c)
