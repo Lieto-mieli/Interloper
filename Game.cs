@@ -298,7 +298,7 @@ internal class Game
             player.Move(-1, 1);
             delay = 0.2;
         }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_ENTER) && delay <= 0) //changes game state between ingame and pause menu
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_R) && delay <= 0) //changes game state between ingame and pause menu
         {
             if (inMenu == "none")
             {

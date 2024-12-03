@@ -13,7 +13,7 @@ public enum TileState
     Open,
     Closed,
 }
-internal class Pathfind
+internal class Pathfind//This whole class is never getting finished lol
 {
     public static int AbsDiff(int a, int b)
     {
